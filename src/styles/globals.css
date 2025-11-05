@@ -1,0 +1,48 @@
+:root {
+  --bg-start: #0b1220;
+  --bg-end: #0f203a;
+  --text: #e6f1ff;
+  --muted: #9fb3c8;
+  --border: rgba(0, 255, 255, 0.25);
+  --glow: rgba(0, 210, 255, 0.6);
+  --card: rgba(255, 255, 255, 0.04);
+  --card-hover: rgba(255, 255, 255, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(60% 80% at 50% 0%, #0f2747 0%, var(--bg-end) 60%),
+    linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  background-attachment: fixed;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* 允许在交互/代码区域可选择文本 */
+input,
+textarea,
+[contenteditable="true"],
+pre,
+code,
+kbd,
+samp {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* 去除点击高亮（移动端） */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
