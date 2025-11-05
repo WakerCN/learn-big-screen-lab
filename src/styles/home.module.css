@@ -1,0 +1,122 @@
+.main {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, #5de0e6, #004aad 60%, #7df9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.cards {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: block;
+  text-align: left;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card), transparent),
+    rgba(5, 10, 20, 0.2);
+  backdrop-filter: blur(6px);
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 210, 255, 0.6);
+  background: linear-gradient(180deg, var(--card-hover), transparent),
+    rgba(5, 10, 20, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15),
+    inset 0 0 25px rgba(0, 210, 255, 0.08);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(0, 210, 255, 0),
+    rgba(0, 210, 255, 0.4),
+    rgba(0, 210, 255, 0)
+  );
+  filter: blur(18px);
+  opacity: 0.25;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover::before {
+  opacity: 0.5;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  background: rgba(0, 210, 255, 0.08);
+  color: #8deaff;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #23c7ff;
+  box-shadow: 0 0 8px #23c7ff;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 6px 0 4px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
